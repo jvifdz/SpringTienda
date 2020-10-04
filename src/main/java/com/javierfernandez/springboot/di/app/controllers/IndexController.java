@@ -13,8 +13,14 @@ public class IndexController {
     // con autoweird no instancio
     // private MiServicio servicio = new MiServicio();
 
+    //Puedo poner el autowired en el set o constructor
     @Autowired
     private IServicio servicio;
+
+    //@Autowired //lo puedo omitir al ser constructor
+    /*public IndexController(IServicio servicio) {
+        this.servicio = servicio;
+    }*/
 
     @GetMapping({"/index", "/", ""})
     public String index(Model model) {
@@ -22,5 +28,6 @@ public class IndexController {
         model.addAttribute("objeto", servicio.operacion());
         return "index";
     }
+
 
 }
