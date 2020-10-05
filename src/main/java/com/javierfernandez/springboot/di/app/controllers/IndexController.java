@@ -15,9 +15,9 @@ public class IndexController {
     // private MiServicio servicio = new MiServicio();
 
     //Puedo poner el autowired en el set o constructor
-    @Autowired
     //anotacion para identificar por nombre
     // @Qualifier("miServicioPrincipal")
+    @Autowired
     private IServicio servicio;
 
     //@Autowired //lo puedo omitir al ser constructor
