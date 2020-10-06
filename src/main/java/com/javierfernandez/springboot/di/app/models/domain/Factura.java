@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.List;
 
 @Component
+@RequestScope
 public class Factura {
 
     @Value("${factura.descripcion}")
@@ -22,7 +24,7 @@ public class Factura {
 
     @PostConstruct
     public void inicializar(){
-        cliente.setNombre(cliente.getNombre().concat(" ").concat(" josé"));
+        cliente.setNombre(cliente.getNombre().concat(" ").concat("josé"));
         descripcion = descripcion.concat(" del cliente: ").concat(cliente.getNombre());
 
     }
