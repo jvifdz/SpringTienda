@@ -30,6 +30,7 @@ public class Factura {
     }
     @PreDestroy
     public void destruir(){
+
         System.out.println("Factura destruida: ".concat(descripcion));
     }
 
